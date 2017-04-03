@@ -2,7 +2,7 @@ version: '2'
 services:
   aurora:
     build: .
-    image: iac-swarm
+    image: aurora
     volumes:
         - ./src:/root/src
     working_dir: /root/src
