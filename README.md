@@ -11,14 +11,6 @@ The core service is the main plugin that provides the "plumbings" to an OpenStac
 
 aurora-ui => aurora-gateway => aurora-manager => aurora-core => OpenStack
 
-## Build your own UI
-
-The aurora stack is built upon the microservices architecture. It is composed of three parts **backend** and one part **frontend**. 
-If you don't like our UI, you can build your own with the language you want, with the tools you prefer and not care what's underneath the covers between you and Openstack: **it's all taken care of**.
-Documentation for the integration aurora-ui and aurora-gateway is not available yet. If you wish to have more information about these feature, please don't hesitate to contact us or create an [issue](https://github.com/entercloudsuite/aurora/issues).
-
-### Services
-| | | |
 | -- | -- | --|
 | Web UI | [https://github.com/entercloudsuite/aurora-ui](https://github.com/entercloudsuite/aurora-ui) |[![Gateway Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-ui/status.svg)](http://185.48.34.80/entercloudsuite/aurora-ui) |
 | Gateway | [https://github.com/entercloudsuite/aurora-gateway](https://github.com/entercloudsuite/aurora-gateway) |[![Gateway Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-gateway/status.svg)](http://185.48.34.80/entercloudsuite/aurora-gateway) |
@@ -26,10 +18,17 @@ Documentation for the integration aurora-ui and aurora-gateway is not available 
 | Core | [https://github.com/entercloudsuite/aurora-core](https://github.com/entercloudsuite/aurora-core) |[![Core Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-core/status.svg)](http://185.48.34.80/entercloudsuite/aurora-core) |
 
 
+## Build your own UI
+
+The aurora stack is built upon the microservices architecture. It is composed of three parts **backend** and one part **frontend**. 
+If you don't like our UI, you can build your own with the language you want, with the tools you prefer and not care what's underneath the covers between you and Openstack: **it's all taken care of**.
+Documentation for the integration aurora-ui and aurora-gateway is not available yet. If you wish to have more information about these feature, please don't hesitate to contact us or create an [issue](https://github.com/entercloudsuite/aurora/issues).
+
 ## Try Aurora (the easy way)
 
+
 ### What do you need
-- **Docker for Desktop®**
+- **Docker® for Desktop**
 
 ### Running Aurora on Enter Cloud Suite
 
@@ -43,7 +42,7 @@ If you need help setting up the account visit the [Support Page](https://www.ent
 3. Use `make start` to run the tool in a local Docker container, from where you can use the following commands:(docker has to build the image from the Dockerfile and it may take a while)  
     - Set up the OpenStack client running `source openrc.sh` (which was previously modified)
     - Verify that authentication is working properly by running an openstack command like: `openstack server list`.
-    - Run `make create` to start the servers in your OpenStack project. (be sure to configure an empty region in ECS in the `openrc.sh` otherwise the creation of the network will fail) 
+    - Run `make create` to start the servers in your OpenStack project.
     - Finally, use `make all` to start deploying a Docker Swarm cluster on the running servers.
 
 ### Deploy the Aurora Stack
@@ -76,7 +75,8 @@ lvie1hkgqckq  aurora_core     replicated  1/1       ecsdevops/aurora-core:latest
 
 ### Getting Started with Aurora
 
-***It's time to load the Aurora Dashboard!***
+**It's time to load the Aurora Dashboard!**
+
 Get the public IP address of one of your Docker Swarm nodes.
 Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.    
 If the browser can't load the login page, check the default Security Group of your Enter Cloud Suite project.
