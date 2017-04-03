@@ -58,7 +58,7 @@ lvie1hkgqckq  aurora_core     replicated  1/1       ecsdevops/aurora-core:latest
 ### Getting Started with Aurora
 
 It's time to load the Aurora Dashboard!  
-Get the public IP address of one of your Docker Swarm nodes. Open it with your browser, setting the port to **9000**. You should see the login page of Aurora.  
+Get the public IP address of one of your Docker Swarm nodes. Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.    
 If the browser can't load the login page, check the default Security Group of your Enter Cloud Suite project.
 The following ports must be open:   
  - 3000 (API Gateway)  
