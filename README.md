@@ -17,7 +17,7 @@ aurora-ui => aurora-gateway => aurora-manager => aurora-core => OpenStack
 | ------------- | ------ |
 | Gateway | [![Gateway Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-gateway/status.svg)](http://185.48.34.80/entercloudsuite/aurora-gateway) |
 | Manager  | [![Manager Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-manager/status.svg)](http://185.48.34.80/entercloudsuite/aurora-manager) |
-| Core [![Core Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-core/status.svg)](http://185.48.34.80/entercloudsuite/aurora-core) |
+| Core | [![Core Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-core/status.svg)](http://185.48.34.80/entercloudsuite/aurora-core) |
 
 ## Try Aurora (the easy way)
 
