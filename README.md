@@ -28,7 +28,7 @@ Documentation for the integration aurora-ui and aurora-gateway is not available 
 
 ## Try Aurora (the easy way)
 
-### What do you need (dependencies)
+### What do you need
 - **Docker for Desktop®**
 
 ### Running Aurora on Enter Cloud Suite
@@ -40,16 +40,17 @@ If you need help setting up the account visit the [Support Page](https://www.ent
 
 1. Clone the repo using your git client.  
 2. Edit the [ **openrc.sh** ](/src/openrc.sh) with your account information (found inside the src folder)
-3. Use `make start` to run the tool in a local Docker container, from where you can use the following commands:  
-    - Set up the OpenStack client running `source openrc.sh`.
+3. Use `make start` to run the tool in a local Docker container, from where you can use the following commands:(docker has to build the image from the Dockerfile and it may take a while)  
+    - Set up the OpenStack client running `source openrc.sh` (which was previously modified)
     - Verify that authentication is working properly by running an openstack command like: `openstack server list`.
     - Run `make create` to start the servers in your OpenStack project. (be sure to configure an empty region in ECS in the `openrc.sh` otherwise the creation of the network will fail) 
     - Finally, use `make all` to start deploying a Docker Swarm cluster on the running servers.
 
 ### Deploy the Aurora Stack
 
-Use `make login host=ansible-dockerswarm-manager` to log in to the manager node of the Docker Swarm cluster.  In order to start the Docker services copy to this server all the project stacks (the content of the **/src/stacks** subfolder) and run each stack with the Docker client.  
-By now, Docker Stack doesn't support the dependency model of the compose file format, so you have to start the stacks in the following order to run Auror properly: 
+Use  `make login host=ansible-dockerswarm-manager` to log in to the manager node of the Docker Swarm cluster.
+In order to start the Docker services copy to this server all the project stacks (the content of the **/src/stacks** subfolder) and run each stack with the Docker client.  
+By now, Docker Stack doesn't support the dependency model of the compose file format, so you have to start the stacks in the following order to run Aurora properly: 
 
 ```
 $ sudo su -
@@ -75,23 +76,16 @@ lvie1hkgqckq  aurora_core     replicated  1/1       ecsdevops/aurora-core:latest
 
 ### Getting Started with Aurora
 
-It's time to load the Aurora Dashboard!  
-Get the public IP address of one of your Docker Swarm nodes. Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.    
+***It's time to load the Aurora Dashboard!***
+Get the public IP address of one of your Docker Swarm nodes.
+Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.    
 If the browser can't load the login page, check the default Security Group of your Enter Cloud Suite project.
 The following ports must be open:   
  - 3000 (API Gateway)  
  - 9000 (Dashboard)  
 
+## Current UI Design
+[https://marvelapp.com/1fai4ah/screen/16826137](https://marvelapp.com/1fai4ah/screen/16826137)
 
-
-<!--
-## Contributing
-
-Feel free to send a pull request being carrefull to respect the wish espressed by the developers in the respective `CONTRIBUTING.md` file inside each repository.
-
-## License
-
-APACHE
-
-
--->
+## Slack Channel
+[https://aurora-devteam.slack.com](https://aurora-devteam.slack.com)
