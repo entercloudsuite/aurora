@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  core:
+    image: ecsdevops/aurora-core:latest
+    ports:
+      - "3002:3002"
+    networks:
+      - frontend
+    depends_on:
+      - manager
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+networks:
+  frontend:

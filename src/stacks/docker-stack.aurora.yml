@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  ui:
+    image: ecsdevops/aurora-ui:latest
+    ports:
+      - "9000:9000"
+    networks:
+      - frontend
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+  api:
+    image: ecsdevops/aurora-gateway:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+networks:
+  frontend:

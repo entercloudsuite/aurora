@@ -1,0 +1,11 @@
+.DS_Store
+.molecule
+*.retry
+.cache
+*.log
+.idea
+*.iml
+ansible-galaxy-*
+ansible-role-*
+*.pem
+src/openrc.sh
