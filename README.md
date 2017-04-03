@@ -1,7 +1,7 @@
 # Aurora
 
 Aurora is an open source alternative to the OpenStack® Horizon dashboard, providing a modern customizable web user experience for IaaS and PaaS services.  
-It’s currently being actively developed by [Cloudbase](www.cloudbase.it) and [Enter](www.entercloudsuite.com), looking for additional enterprise contributors and early adopter users.
+It’s currently being actively developed by [Cloudbase](http://www.cloudbase.it) and [Enter](http://www.entercloudsuite.com), looking for additional enterprise contributors and early adopter users.
 
 ## The Aurora Stack
 
@@ -58,7 +58,7 @@ lvie1hkgqckq  aurora_core     replicated  1/1       ecsdevops/aurora-core:latest
 ### Getting Started with Aurora
 
 It's time to load the Aurora Dashboard!  
-Get the public IP address of one of your Docker Swarm nodes. Open it with your browser, setting the port to 9000. You should see the login page of Aurora.  
+Get the public IP address of one of your Docker Swarm nodes. Open it with your browser, setting the port to **9000**. You should see the login page of Aurora.  
 If the browser can't load the login page, check the default Security Group of your Enter Cloud Suite project.
 The following ports must be open:   
  - 3000 (API Gateway)  
