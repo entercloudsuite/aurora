@@ -1,0 +1,10 @@
+pipeline:
+
+  publish:
+      image: plugins/docker
+      repo: ecsdevops/aurora
+      username: ecsdevops
+      password: ${DOCKER_PASSWORD}
+      tags:
+        - latest
+        - ${DRONE_COMMIT_SHA}%
