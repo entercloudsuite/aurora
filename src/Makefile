@@ -1,4 +1,4 @@
-all: converge test
+all: converge
 
 create:
 	molecule create
@@ -7,7 +7,7 @@ login:
 	molecule login --host $(host)	
 
 converge:
-	molecule syntax
+	molecule syntax 
 	molecule converge
 
 test:
