@@ -43,24 +43,12 @@ If you need help setting up the account visit the [Support Page](https://www.ent
 3. Use `make start` to run the tool in a local Docker container, from where you can use the following commands:(docker has to build the image from the Dockerfile and it may take a while)  
     - Set up the OpenStack client running `source openrc.sh` (which was previously modified)
     - Verify that authentication is working properly by running an openstack command like: `openstack server list`.
-    - Run `make create` to start the servers in your OpenStack project.
-    - Finally, use `make all` to start deploying a Docker Swarm cluster on the running servers.
+    - Run `make create` to start the servers in your OpenStack project. 
+    - Finally, use `make deploy` to start deploying a Docker Swarm cluster on the running servers and all the Aurora stack.
 
-### Deploy the Aurora Stack
+## Listing the services
 
 Use  `make login host=ansible-dockerswarm-manager` to log in to the manager node of the Docker Swarm cluster.
-In order to start the Docker services copy to this server all the project stacks (the content of the **/src/stacks** subfolder) and run each stack with the Docker client.  
-By now, Docker Stack doesn't support the dependency model of the compose file format, so you have to start the stacks in the following order to run Aurora properly: 
-
-```
-$ sudo su -
-...
-$ docker stack deploy -c docker-stack.aurora.dep.yml aurora
-$ docker stack deploy -c docker-stack.aurora.yml aurora
-$ docker stack deploy -c docker-stack.aurora.manager.yml aurora
-$ docker stack deploy -c docker-stack.aurora.core.yml aurora
-```
-
 Inspect Docker Swarm to check all the services are running.  
 The command `docker service ls` should show a set of services that look something like this:   
 
@@ -79,11 +67,8 @@ lvie1hkgqckq  aurora_core     replicated  1/1       ecsdevops/aurora-core:latest
 **It's time to load the Aurora Dashboard!**
 
 Get the public IP address of one of your Docker Swarm nodes.
-Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.    
-If the browser can't load the login page, check the default Security Group of your Enter Cloud Suite project.
-The following ports must be open:   
- - 3000 (API Gateway)  
- - 9000 (Dashboard)  
+Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.  
+If the browser can't load the login page, be patient: the docker-engine needs to download the images for all the services before starting them. It will only take a few minutes. 
 
 ## Current UI Design
 [https://marvelapp.com/1fai4ah/screen/16826137](https://marvelapp.com/1fai4ah/screen/16826137)
