@@ -1,8 +1,9 @@
 version: '2'
 services:
   aurora:
-    build: .
-    image: aurora
+    # build: .
+    # image: aurora
+    image: ecsdevops/aurora:latest
     volumes:
         - ./src:/root/src
     working_dir: /root/src
