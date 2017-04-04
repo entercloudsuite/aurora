@@ -1,0 +1,10 @@
+---
+# task 
+
+- name: copy files inside manager
+  copy: src=stacks dest=/root
+  notify:
+    - docker1
+    - docker2
+    - docker3
+    - docker4

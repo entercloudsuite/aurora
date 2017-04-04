@@ -1,0 +1,18 @@
+---
+# module to activate the aurora stack from the compose file we transfered to the manager
+
+- name: docker1
+  shell: docker stack deploy -c /root/stacks/docker-stack.aurora.dep.yml aurora 
+  become: true
+
+- name: docker2
+  shell: sleep 10 && docker stack deploy -c /root/stacks/docker-stack.aurora.yml aurora
+  become: true
+
+- name: docker3
+  shell: sleep 20 && docker stack deploy -c /root/stacks/docker-stack.aurora.manager.yml aurora
+  become: true
+
+- name: docker4
+  shell: sleep 30 && docker stack deploy -c /root/stacks/docker-stack.aurora.core.yml aurora
+  become: true
