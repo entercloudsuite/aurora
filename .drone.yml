@@ -7,4 +7,4 @@ pipeline:
       password: ${DOCKER_PASSWORD}
       tags:
         - latest
-        - ${DRONE_COMMIT_SHA}%
+        - ${DRONE_COMMIT_SHA}
