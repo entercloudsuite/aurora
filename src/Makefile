@@ -1,6 +1,7 @@
-all: converge
+deploy: converge
 
-create:
+create: 
+	make security
 	molecule create
 
 login:
@@ -15,3 +16,8 @@ test:
 
 galaxy-install:
 	ansible-galaxy install -r requirements.yml -p roles
+
+security:
+	chmod +x sec.sh
+	./sec.sh
+

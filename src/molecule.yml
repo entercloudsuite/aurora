@@ -21,6 +21,7 @@ openstack:
       image: 'GNU/Linux Ubuntu Server 16.04 Xenial Xerus x64'
       flavor: e3standard.x3
       sshuser: ubuntu
+      security_groups: aurora_security_group
       ssh_timeout: 240
       ansible_groups:
         - docker_engine
@@ -29,6 +30,7 @@ openstack:
       image: 'GNU/Linux Ubuntu Server 16.04 Xenial Xerus x64'
       flavor: e3standard.x3
       sshuser: ubuntu
+      security_groups: aurora_security_group
       ssh_timeout: 240
       ansible_groups:
         - docker_engine
