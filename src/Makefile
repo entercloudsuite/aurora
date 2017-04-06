@@ -21,3 +21,8 @@ security:
 	chmod +x sec.sh
 	./sec.sh
 
+destroy:
+	# destroys the two machines and the security group (not the keypairs)
+	openstack server delete ansible-dockerswarm-manager
+	openstack server delete ansible-dockerswarm-worker
+	openstack security group delete aurora_security_group

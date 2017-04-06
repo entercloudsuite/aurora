@@ -70,6 +70,10 @@ Get the public IP address of one of your Docker Swarm nodes.
 Open it with your browser, setting the port to **9000**. You should see the login page of Aurora, where you can sign in with your Enter Cloud Suite credentials.  
 If the browser can't load the login page, be patient: the docker-engine needs to download the images for all the services before starting them. It will only take a few minutes. 
 
+## How to cleanup after testing
+1. if your exited the aurora container, just type `make start` as you did when creating the container the first time.
+2. once inside the container, simply typing `make destroy` will delete the cluster and will stop paying for it
+
 ## Current UI Design
 [https://marvelapp.com/1fai4ah/screen/16826137](https://marvelapp.com/1fai4ah/screen/16826137)
 
