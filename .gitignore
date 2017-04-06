@@ -10,3 +10,4 @@ ansible-role-*
 *.pem
 /src/openrcdev.sh
 /src/aurorarc.sh
+/src/setup.retry

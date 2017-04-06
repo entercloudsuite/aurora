@@ -40,11 +40,11 @@ If you need help setting up the account visit the [Support Page](https://www.ent
 
 1. Clone the repo using your git client.  
 2. Edit the [ **openrc.sh** ](/src/openrc.sh) with your account information (found inside the src folder)
-3. Use `make start` to run the tool in a local Docker container, from where you can use the following commands:(docker has to build the image from the Dockerfile and it may take a while)  
-    - Set up the OpenStack client running `source openrc.sh` (which was previously modified)
+3. `make start`: run the tool in a local Docker container, from where you can use the following commands:(docker has to build the image from the Dockerfile and it may take a while)  
+    - `source openrc.sh` sets up the OpenStack client configurations (which was previously edited)
     - Verify that authentication is working properly by running an openstack command like: `openstack server list`.
-    - Run `make create` to start the servers in your OpenStack project. 
-    - Finally, use `make deploy` to start deploying a Docker Swarm cluster on the running servers and all the Aurora stack.
+    - `make create` starts the servers in your OpenStack project. 
+    - `make deploy` starts the deployment of a Docker Swarm cluster on the running servers and provision all the Aurora stack.
 
 ## Listing the services
 

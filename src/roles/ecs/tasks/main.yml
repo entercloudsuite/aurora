@@ -1,0 +1,44 @@
+---
+
+- name: Create the network
+  os_network: name="AuroraNetwork" state=present
+  register: aurora_network
+
+- name: Create the subnet
+  os_subnet:
+    name: "AuroraSubnet"
+    network_name: "{{ aurora_network.network.name }}"
+    cidr: "192.168.250.0/24"
+    dns_nameservers:
+       - 8.8.8.8
+       - 8.8.4.4
+    state: present
+
+- name: Create the router
+  os_router:
+    name: "AuroraRouter"
+    network: "PublicNetwork"
+    interfaces: [ "AuroraSubnet" ]
+    state: present
+
+- name: Create the security group
+  os_security_group:
+    name: "AuroraSecurity"
+    description: "The Aurora security group"
+    state: present
+
+- name: Allow all TCP ports
+  os_security_group_rule:
+    security_group: "AuroraSecurity"
+    protocol: tcp
+    port_range_min: 1
+    port_range_max: 65535
+    remote_ip_prefix: 0.0.0.0/0
+
+- name: Allow all UPD ports
+  os_security_group_rule:
+    security_group: "AuroraSecurity"
+    protocol: udp
+    port_range_min: 1
+    port_range_max: 65535
+    remote_ip_prefix: 0.0.0.0/0

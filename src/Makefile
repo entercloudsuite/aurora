@@ -1,7 +1,8 @@
 deploy: converge
+	openstack floating ip list
 
 create: 
-	make security
+	ansible-playbook setup.yml
 	molecule create
 
 login:
@@ -17,12 +18,5 @@ test:
 galaxy-install:
 	ansible-galaxy install -r requirements.yml -p roles
 
-security:
-	chmod +x sec.sh
-	./sec.sh
-
 destroy:
-	# destroys the two machines and the security group (not the keypairs)
-	openstack server delete ansible-dockerswarm-manager
-	openstack server delete ansible-dockerswarm-worker
-	openstack security group delete aurora_security_group
+	molecule destroy
