@@ -37,6 +37,7 @@ If you are looking an easy way to setup the Aurora stack, consider to try [Enter
 If you need help setting up the account visit the [Support Page](https://www.entercloudsuite.com/en/contact-us/) for more details.
 
 ### Infrastructure Quickstart 
+**IMPORTANT:** for security and isolation reasons a new tenant or an empty region MUST be use in order to create the cluster
 
 1. Clone the repo using your git client.  
 2. Edit the [ **openrc.sh** ](/src/openrc.sh) with your account information (found inside the src folder)

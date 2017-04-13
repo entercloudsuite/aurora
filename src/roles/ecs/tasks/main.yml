@@ -1,14 +1,16 @@
 ---
 
 - name: Create the network
-  os_network: name="AuroraNetwork" state=present
+  os_network: 
+    name: "AuroraNetwork"
+    state: present
   register: aurora_network
-
+  
 - name: Create the subnet
   os_subnet:
     name: "AuroraSubnet"
     network_name: "{{ aurora_network.network.name }}"
-    cidr: "192.168.250.0/24"
+    cidr: "192.168.70.0/24"
     dns_nameservers:
        - 8.8.8.8
        - 8.8.4.4
@@ -16,7 +18,7 @@
 
 - name: Create the router
   os_router:
-    name: "AuroraRouter"
+    name: "Aurora Router"
     network: "PublicNetwork"
     interfaces: [ "AuroraSubnet" ]
     state: present
