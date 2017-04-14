@@ -80,3 +80,6 @@ If the browser can't load the login page, be patient: the docker-engine needs to
 
 ## Slack Channel
 [https://aurora-devteam.slack.com](https://aurora-devteam.slack.com)
+
+## Demo Video
+<script type="text/javascript" src="https://asciinema.org/a/c4g9mn8lf3bs5qjg2g2r8bfms.js" id="asciicast-c4g9mn8lf3bs5qjg2g2r8bfms" async></script>
