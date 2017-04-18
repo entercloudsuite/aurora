@@ -82,4 +82,4 @@ If the browser can't load the login page, be patient: the docker-engine needs to
 [https://aurora-devteam.slack.com](https://aurora-devteam.slack.com)
 
 ## Demo Video
-![demo](/demo.gif)
+[![asciicast](https://asciinema.org/a/c4g9mn8lf3bs5qjg2g2r8bfms.png)](https://asciinema.org/a/c4g9mn8lf3bs5qjg2g2r8bfms)
