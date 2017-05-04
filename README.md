@@ -44,8 +44,10 @@ If you need help setting up the account visit the [Support Page](https://www.ent
 3. `make start`: run the tool in a local Docker container, from where you can use the following commands:(docker has to build the image from the Dockerfile and it may take a while)  
     - `source openrc.sh` sets up the OpenStack client configurations (which was previously edited)
     - Verify that authentication is working properly by running an openstack command like: `openstack server list`.
-    - `make create` starts the servers in your OpenStack project. 
+    - `make create` starts the servers in your OpenStack project.  
     - `make deploy` starts the deployment of a Docker Swarm cluster on the running servers and provision all the Aurora stack.
+    
+Thanks to [Andrea Tosatto](https://github.com/atosatto) for his great [ansible role](https://galaxy.ansible.com/atosatto/docker-swarm/) for setting up the Docker stuff.  
 
 ## Listing the services
 
