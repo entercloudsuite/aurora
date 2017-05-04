@@ -29,3 +29,4 @@ galaxy-install:
 
 destroy:
 	molecule destroy
+	ansible-playbook clean.yml

@@ -1,0 +1,21 @@
+---
+
+- name: Remove the security group
+ os_security_group:
+   name: "DemoSecGrp"
+   state: absent
+
+- name: Remove the router
+ os_router:
+   name: "DemoRouter"
+   state: absent
+
+- name: Remove the subnet
+ os_subnet:
+   name: "DemoSubnet"
+   state: absent
+
+- name: Remove the network
+ os_network:
+   name: "DemoNetwork"
+   state: absent

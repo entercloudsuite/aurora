@@ -1,0 +1,6 @@
+---
+
+- name: Destroy configuration previously created
+  hosts: 127.0.0.1
+  roles:
+     - clean
