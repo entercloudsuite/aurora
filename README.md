@@ -47,7 +47,7 @@ If you need help setting up the account visit the [Support Page](https://www.ent
     - `make create` starts the servers in your OpenStack project.  
     - `make deploy` starts the deployment of a Docker Swarm cluster on the running servers and provision all the Aurora stack.
     
-Thanks to [Andrea Tosatto](https://github.com/atosatto) for his great [ansible role](https://galaxy.ansible.com/atosatto/docker-swarm/) for setting up the Docker stuff.  
+Thanks to [Andrea Tosatto](https://github.com/atosatto) for his great [ansible role](https://galaxy.ansible.com/atosatto/docker-swarm/) which sets up the Docker stuff.  
 
 ## Listing the services
 
