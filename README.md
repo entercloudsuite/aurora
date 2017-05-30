@@ -9,10 +9,11 @@ Aurora UI is a brand new dashboard with a focus on customization and extensibili
 Aurora API provides a layer of abstraction between the UI and an OpenStack infrastructure. The API Gateway is the entry point for the UI. It forwards client calls based on information provided by the Service Manager and following dynamically created routes.  
 The core service is the main plugin that provides the "plumbings" to an OpenStack Infrastructure.  
 
-<!--![infrastructure](infrastructure.png)-->
-<p align="center"><img src="infrastructure.png" width="60%"></p>
+<img src="infrastructure.png" width="80%">
 
-| Component | Reporitory Link | CI |
+## Components
+
+| Name | Reporitory Link | CI |
 | -- | -- | --|
 | Web UI | [https://github.com/entercloudsuite/aurora-ui](https://github.com/entercloudsuite/aurora-ui) |[![Gateway Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-ui/status.svg)](http://185.48.34.80/entercloudsuite/aurora-ui) |
 | Gateway | [https://github.com/entercloudsuite/aurora-gateway](https://github.com/entercloudsuite/aurora-gateway) |[![Gateway Build Status](http://185.48.34.80/api/badges/entercloudsuite/aurora-gateway/status.svg)](http://185.48.34.80/entercloudsuite/aurora-gateway) |
